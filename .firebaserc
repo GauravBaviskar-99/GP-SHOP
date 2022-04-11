@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "gp-shop-7f3a1": {
+      "hosting": {
+        "GP-SHOP": [
+          "gp-shop-7f3a1"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "gp-shop-7f3a1"
+  }
+}
