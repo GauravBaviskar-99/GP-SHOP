@@ -24,6 +24,9 @@ import { AdminProductsComponent } from './admin/admin-products/admin-products.co
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
 import { LoginComponent } from './login/login.component';
 import { CheckOutComponent } from './check-out/check-out.component';
+import { AngularFireAuthModule } from "@angular/fire/compat/auth";
+import { ProductFormComponent } from './admin/product-form/product-form.component';
+
 
 
 
@@ -40,7 +43,8 @@ import { CheckOutComponent } from './check-out/check-out.component';
     AdminProductsComponent,
     AdminOrdersComponent,
     LoginComponent,
-    CheckOutComponent
+    CheckOutComponent,
+    ProductFormComponent
   ],
   imports: [
     BrowserModule,
@@ -55,6 +59,7 @@ import { CheckOutComponent } from './check-out/check-out.component';
     provideRemoteConfig(() => getRemoteConfig()),
     provideStorage(() => getStorage()),
     AngularFireDatabaseModule,
+    AngularFireAuthModule
 
   ],
   providers: [],
