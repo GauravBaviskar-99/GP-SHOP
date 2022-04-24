@@ -1,3 +1,4 @@
+import { ProductFormComponent } from './admin/product-form/product-form.component';
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
 import { MyOrdersComponent } from './my-orders/my-orders.component';
 import { OrderSuccessComponent } from './order-success/order-success.component';
@@ -23,15 +24,26 @@ const routes: Routes = [
   { path: 'my/orders', component: MyOrdersComponent, canActivate: [AuthGuard] },
 
   {
+    path: 'admin/products/new',
+    component: ProductFormComponent,
+    canActivate: [AuthGuard, AdminGuard]
+  },
+  {
+    path: 'admin/products/:id',
+    component: ProductFormComponent,
+    canActivate: [AuthGuard, AdminGuard]
+  },
+  {
     path: 'admin/products',
     component: AdminProductsComponent,
     canActivate: [AuthGuard, AdminGuard]
   },
+
   {
     path: 'admin/orders',
     component: AdminOrdersComponent,
     canActivate: [AuthGuard, AdminGuard]
-  }
+  },
 ];
 
 @NgModule({

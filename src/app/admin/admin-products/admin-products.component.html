@@ -1,1 +1,25 @@
-<p>admin-products works!</p>
+<a style="margin: 30px;" routerLink="/admin/products/new" class="btn btn-primary">ManageProducts</a>
+
+<div class="input-group mb-3" style="margin-inline: 40px;">
+
+    <input #query (keyup)="filterProductList(query.value)" type="text" class="form-control"
+        placeholder="Search Product ..." aria-label="Username" aria-describedby="basic-addon1">
+</div>
+
+<table class="table table-hover" style="margin: 35px;">
+    <thead>
+        <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Price</th>
+            <th scope="col">Edit Product</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr scope="row" *ngFor="let product of filteredProductList">
+            <td>{{product.title}}</td>
+            <td>{{product.price}}</td>
+            <td><a [routerLink]="['/admin/products/',product.key]">Edit
+                    Product</a></td>
+        </tr>
+    </tbody>
+</table>

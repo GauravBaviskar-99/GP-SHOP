@@ -26,6 +26,8 @@ import { LoginComponent } from './login/login.component';
 import { CheckOutComponent } from './check-out/check-out.component';
 import { AngularFireAuthModule } from "@angular/fire/compat/auth";
 import { ProductFormComponent } from './admin/product-form/product-form.component';
+import { FormsModule } from '@angular/forms';
+import { CustomFormsModule } from 'ng2-validation'
 
 
 
@@ -59,7 +61,9 @@ import { ProductFormComponent } from './admin/product-form/product-form.componen
     provideRemoteConfig(() => getRemoteConfig()),
     provideStorage(() => getStorage()),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    FormsModule,
+    CustomFormsModule
 
   ],
   providers: [],

@@ -11,6 +11,5 @@ export class AppComponent {
   title = 'GP-SHOP';
   items: Observable<any[]>;
   constructor(db: AngularFireDatabase) {
-    this.items = db.list('/Friends').valueChanges();
   }
 }
