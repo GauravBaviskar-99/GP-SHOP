@@ -27,7 +27,9 @@ import { CheckOutComponent } from './check-out/check-out.component';
 import { AngularFireAuthModule } from "@angular/fire/compat/auth";
 import { ProductFormComponent } from './admin/product-form/product-form.component';
 import { FormsModule } from '@angular/forms';
-import { CustomFormsModule } from 'ng2-validation'
+import { CustomFormsModule } from 'ng2-validation';
+import { ProductFilterComponent } from './product-filter/product-filter.component';
+import { ProductCardComponent } from './product-card/product-card.component'
 
 
 
@@ -46,7 +48,9 @@ import { CustomFormsModule } from 'ng2-validation'
     AdminOrdersComponent,
     LoginComponent,
     CheckOutComponent,
-    ProductFormComponent
+    ProductFormComponent,
+    ProductFilterComponent,
+    ProductCardComponent
   ],
   imports: [
     BrowserModule,

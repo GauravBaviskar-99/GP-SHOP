@@ -50,13 +50,6 @@
         </form>
     </div>
     <div class="col-md-4">
-        <div class="card" style="width: 18rem; margin-block: 15%;">
-            <img [src]="url.value" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">{{title.value}}</h5>
-                <p class="card-text">{{price.value | currency:'INR':'symbol'}}</p>
-                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-            </div>
-        </div>
+        <product-card [product]="product" [showActions]="false"></product-card>
     </div>
 </div>

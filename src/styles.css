@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+.card-img, .card-img-bottom, .card-img-top {
+    width: 100%;
+    max-height: 286px;
+}
+
