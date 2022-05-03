@@ -5,6 +5,34 @@
         <p class="card-text">{{product.price | currency:'INR' }}</p>
     </div>
     <div class="card-footer d-grid" *ngIf="showActions">
-        <a href="#" class="btn btn-primary btn-block">Add to Cart</a>
+
+        <button *ngIf="getQuantity()==0; else showQuantity" (click)="addToShoppingCart()"
+            class="btn btn-secondary btn-block">Add to
+            Cart
+        </button>
+
+
+        <ng-template #showQuantity>
+
+            <div class="row g-0">
+
+                <div class="col-2 d-grid">
+                    <button (click)="removeFromShoppingCart()" class="btn btn-secondary btn-block">-</button>
+                </div>
+
+                <div class="col-8 text-center">
+                    {{getQuantity() }} In cart
+
+                </div>
+
+                <div class="col-2 d-grid">
+                    <button (click)="addToShoppingCart()" class="btn btn-secondary btn-block">+</button>
+                </div>
+
+            </div>
+
+        </ng-template>
+
+
     </div>
 </div>
