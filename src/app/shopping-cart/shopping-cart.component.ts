@@ -18,4 +18,8 @@ export class ShoppingCartComponent implements OnInit {
     this.ShoppingCart$ = await this.ShoppingCartService.getCart()
   }
 
+  clearShoppingCart() {
+    this.ShoppingCartService.clearShoppingCart()
+  }
+
 }

@@ -25,6 +25,11 @@ export class ShoppingCartService {
     }));
   }
 
+  async clearShoppingCart() {
+    let cartId = await this.getOrCreateShoppingCartId();
+    this.firebaseDB.object('/Shopping-Carts/' + cartId + '/Items/').remove();
+  }
+
   private async getOrCreateShoppingCartId() {
     let cartId = localStorage.getItem('cartId');
 
@@ -55,7 +60,13 @@ export class ShoppingCartService {
     itemRef.valueChanges().pipe(take(1)).subscribe((item: any) => {
 
       if (item?.quantity + change == 0) itemRef.remove();
-      else itemRef.update({ product: product, quantity: (item?.quantity || 0) + change });
+      else itemRef.update(
+        {
+          title: product.title,
+          price: product.price,
+          imageUrl: product.imageUrl,
+          quantity: (item?.quantity || 0) + change
+        });
 
     })
   }

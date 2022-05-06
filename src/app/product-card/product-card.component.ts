@@ -12,7 +12,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ProductCardComponent implements OnInit {
   @Input('product') product: Product;
   @Input('showActions') showActions: boolean = true;
-  @Input('shoppping-cart') shoppingCart: ShoppingCart;
+  @Input('shoppping-cart') shoppingCart: ShoppingCart | any;
   constructor(private cartService: ShoppingCartService) { }
 
   ngOnInit(): void {
