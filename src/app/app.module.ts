@@ -29,7 +29,8 @@ import { ProductFormComponent } from './admin/product-form/product-form.componen
 import { FormsModule } from '@angular/forms';
 import { CustomFormsModule } from 'ng2-validation';
 import { ProductFilterComponent } from './product-filter/product-filter.component';
-import { ProductCardComponent } from './product-card/product-card.component'
+import { ProductCardComponent } from './product-card/product-card.component';
+import { ProductQuantityComponent } from './product-quantity/product-quantity.component'
 
 
 
@@ -50,7 +51,8 @@ import { ProductCardComponent } from './product-card/product-card.component'
     CheckOutComponent,
     ProductFormComponent,
     ProductFilterComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    ProductQuantityComponent
   ],
   imports: [
     BrowserModule,

@@ -52,7 +52,12 @@ export class ShoppingCartService {
     let cartId = await this.getOrCreateShoppingCartId();
     let itemRef = this.getItemReferenceFromShoppingCart(cartId as string, product.key)
 
-    itemRef.valueChanges().pipe(take(1)).subscribe((item: any) => itemRef.update({ product: product, quantity: (item?.quantity || 0) + change }))
+    itemRef.valueChanges().pipe(take(1)).subscribe((item: any) => {
+
+      if (item?.quantity + change == 0) itemRef.remove();
+      else itemRef.update({ product: product, quantity: (item?.quantity || 0) + change });
+
+    })
   }
 
 
