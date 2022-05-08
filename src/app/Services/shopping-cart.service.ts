@@ -21,7 +21,7 @@ export class ShoppingCartService {
     let cartId = await this.getOrCreateShoppingCartId();
     return this.firebaseDB.object('/Shopping-Carts/' + cartId).valueChanges().pipe(map((cart: any) => {
       if (cart?.Items) return new ShoppingCart(cart.Items)
-      return cart;
+      return new ShoppingCart({});
     }));
   }
 

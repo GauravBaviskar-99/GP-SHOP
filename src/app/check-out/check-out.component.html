@@ -1,1 +1,37 @@
-<p>check-out works!</p>
+<div style="margin:7%">
+    <h1>Enter Shipping Details</h1>
+    <form #shippingForm="ngForm" (ngSubmit)="onSubmitShippingForm(shippingForm.value)">
+        <div class="form-group mb-4">
+            <label for="">Name</label>
+            <input required #name="ngModel" ngModel name="name" type="text" class="form-control">
+        </div>
+        <div *ngIf="name.touched && name.invalid" class="alert alert-danger">Name is Required</div>
+        <div class="form-group mb-4">
+            <label for="address">Address</label>
+            <div #address="ngModelGroup" ngModelGroup="address">
+
+                <input #line_1="ngModel" required ngModel placeholder="line 1" name="line_1" type="text"
+                    class="form-control mb-3">
+                <input #line_2="ngModel" ngModel placeholder="line 2" name="line_2" type="text" class="form-control">
+            </div>
+        </div>
+        <div *ngIf="address.touched && (line_1.invalid)" class="alert alert-danger">address is
+            Required</div>
+
+        <div class="row g-2">
+
+            <div class="form-group mb-4 me-3 col-md">
+                <label for="Mobile_No">Mobile No</label>
+                <input #Mobile_No="ngModel" required ngModel name="Mobile_No" type="number" class="form-control">
+            </div>
+            <div class="form-group mb-4 col-md">
+                <label for="">City</label>
+                <input #city="ngModel" required ngModel name="city" type="text" class="form-control">
+            </div>
+        </div>
+        <div *ngIf="Mobile_No.touched && Mobile_No.invalid" class="alert alert-danger">Mobile_No is Required</div>
+        <div *ngIf="city.touched && city.invalid" class="alert alert-danger">City is Required</div>
+
+        <button [disabled]="shippingForm.invalid" class="btn btn-primary">Submit</button>
+    </form>
+</div>

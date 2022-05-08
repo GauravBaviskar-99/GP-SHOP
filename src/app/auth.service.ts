@@ -35,6 +35,7 @@ export class AuthService {
   }
   logout() {
     this.auth.signOut()
+    this.route.navigate(['/'])
   }
 
   getAppUserDetails(): Observable<AppUser | null> {

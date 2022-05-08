@@ -16,6 +16,7 @@ export class ProductCardComponent implements OnInit {
   constructor(private cartService: ShoppingCartService) { }
 
   ngOnInit(): void {
+    console.warn(this.shoppingCart)
   }
 
   async addToShoppingCart() {

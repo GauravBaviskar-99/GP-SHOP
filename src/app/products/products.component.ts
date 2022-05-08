@@ -15,7 +15,7 @@ export class ProductsComponent implements OnInit {
   public allAvailableProducts: Product[] = [];
   public filteredProducts: Product[] = [];
   public category: any;
-  public cart$: ShoppingCart | any;
+  public cart: ShoppingCart | any;
 
   constructor(private ProductService: ProductService,
     private ShoppingCartService: ShoppingCartService,
@@ -25,7 +25,8 @@ export class ProductsComponent implements OnInit {
   }
 
   async ngOnInit() {
-    this.cart$ = (await this.ShoppingCartService.getCart());
+
+    (await this.ShoppingCartService.getCart()).subscribe(cart => this.cart = cart);
     this.populateProducts()
   }
 
