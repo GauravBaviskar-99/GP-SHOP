@@ -30,7 +30,10 @@ import { FormsModule } from '@angular/forms';
 import { CustomFormsModule } from 'ng2-validation';
 import { ProductFilterComponent } from './product-filter/product-filter.component';
 import { ProductCardComponent } from './product-card/product-card.component';
-import { ProductQuantityComponent } from './product-quantity/product-quantity.component'
+import { ProductQuantityComponent } from './product-quantity/product-quantity.component';
+import { ShippingWidgetComponent } from './shipping-widget/shipping-widget.component';
+import { ShippingFormComponent } from './shipping-form/shipping-form.component';
+import { OrderDetailsComponent } from './order-details/order-details.component'
 
 
 
@@ -52,7 +55,10 @@ import { ProductQuantityComponent } from './product-quantity/product-quantity.co
     ProductFormComponent,
     ProductFilterComponent,
     ProductCardComponent,
-    ProductQuantityComponent
+    ProductQuantityComponent,
+    ShippingWidgetComponent,
+    ShippingFormComponent,
+    OrderDetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,21 @@
-<p>admin-orders works!</p>
+<div style="margin:7%">
+
+    <h1>All Orders</h1>
+
+    <table class="table table-dark table-hover" *ngIf="allOrders$ |async as Orders">
+        <thead>
+            <th>Name Of Customer</th>
+            <th>Order Date</th>
+            <th>View Order</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let order of Orders">
+                <td>{{order.shippingDetails.name}}</td>
+                <td>{{ order.datePlace | date:'medium'}}</td>
+                <td><a [routerLink]="['/orderDetails',order.key]">View Order</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</div>
