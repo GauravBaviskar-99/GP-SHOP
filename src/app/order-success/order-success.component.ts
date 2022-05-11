@@ -1,4 +1,6 @@
+import { AuthService } from './../auth.service';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-order-success',
@@ -6,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./order-success.component.css']
 })
 export class OrderSuccessComponent implements OnInit {
-
-  constructor() { }
+  userDetails$: Observable<any>
+  constructor(private AuthService: AuthService) { }
 
   ngOnInit(): void {
+    this.userDetails$ = this.AuthService.getAppUserDetails();
   }
 
 }

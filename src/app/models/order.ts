@@ -3,9 +3,10 @@ export class Order {
 
     datePlace: number;
     Items: any[] = [];
+    totalOrderPrice: number;
     constructor(private userId: string, public shippingDetails: any, ShoppingCart: ShoppingCart) {
         this.datePlace = new Date().getTime();
-
+        this.totalOrderPrice = ShoppingCart.totalPrice;
         this.Items = ShoppingCart.Items.map(item => {
             return {
                 product: {

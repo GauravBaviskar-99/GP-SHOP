@@ -1,4 +1,7 @@
+import { OrderService } from 'src/app/Services/order.service';
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { Order } from '../models/order';
 
 @Component({
   selector: 'order-details',
@@ -6,10 +9,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./order-details.component.css']
 })
 export class OrderDetailsComponent implements OnInit {
-
-  constructor() { }
+  public orderId: string | null;
+  public order: Order | any;
+  constructor(private activatedRout: ActivatedRoute, private OrderService: OrderService) { }
 
   ngOnInit(): void {
+    this.activatedRout.paramMap.subscribe(params => this.orderId = params.get('id'))
+    if (this.orderId)
+      this.OrderService.getOrder(this.orderId).subscribe(order => this.order = order);
+
   }
 
 }

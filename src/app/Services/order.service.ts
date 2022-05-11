@@ -35,4 +35,8 @@ export class OrderService {
     }));
   }
 
+  getOrder(orderId: any) {
+    return this.firebaseDB.object('/Orders/' + orderId).valueChanges();
+  }
+
 }

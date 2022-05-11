@@ -1,1 +1,28 @@
-<p>order-details works!</p>
+<div style="margin: 7%;">
+    <h1>Order Details Placed on {{order.datePlace | date:'medium'}} </h1>
+    <table class="table mt-5">
+        <thead>
+            <th>Product </th>
+            <th>Quantity </th>
+            <th>Total Price</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of order.Items">
+                <!-- <td></td> -->
+                <td>{{item.product.title}}</td>
+                <td>{{item.quantity}}&nbsp; X &nbsp; {{item.product.price}} </td>
+                <td> {{item.totalPrice | currency:'INR'}} </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <!-- <th></th> -->
+                <th></th>
+                <th>Total</th>
+                <th> {{order.totalOrderPrice | currency:'INR'}} </th>
+            </tr>
+        </tfoot>
+    </table>
+
+
+</div>
