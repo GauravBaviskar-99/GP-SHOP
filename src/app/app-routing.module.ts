@@ -11,8 +11,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ProductsComponent } from './products/products.component';
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
-import { AuthGuard } from './Guards/auth.guard';
-import { AdminGuard } from './Guards/admin.guard';
+import { AuthGuard } from 'shared/Guards/auth.guard';
+import { AdminGuard } from 'shared/Guards/admin.guard';
 
 const routes: Routes = [
   { path: '', component: ProductsComponent },

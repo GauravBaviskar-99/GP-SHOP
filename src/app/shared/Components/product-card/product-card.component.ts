@@ -1,6 +1,6 @@
 import { ShoppingCart } from 'shared/models/shopping-cart';
 import { Product } from 'shared/models/product';
-import { ShoppingCartService } from './../Services/shopping-cart.service';
+import { ShoppingCartService } from 'shared/Services/shopping-cart.service';
 import { provideAuth } from '@angular/fire/auth';
 import { Component, Input, OnInit } from '@angular/core';
 

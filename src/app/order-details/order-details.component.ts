@@ -1,4 +1,4 @@
-import { OrderService } from 'src/app/Services/order.service';
+import { OrderService } from 'shared/Services/order.service';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Order } from 'shared/models/order';
