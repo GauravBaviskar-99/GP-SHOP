@@ -1,9 +1,9 @@
-import { ShoppingCart } from './../models/shopping-cart';
+import { ShoppingCart } from 'shared/models/shopping-cart';
 import { ShoppingCartService } from './../Services/shopping-cart.service';
 import { switchMap, Subscription } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from './../Services/product.service';
-import { Product } from './../models/product';
+import { Product } from 'shared/models/product';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
