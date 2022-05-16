@@ -1,3 +1,4 @@
+import { CoreModule } from './core/core.module';
 import { ShoppingModule } from './shopping/shopping.module';
 import { NgModule } from '@angular/core';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
@@ -19,21 +20,16 @@ import { environment } from '../environments/environment';
 import { AdminModule } from './admin/admin.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BsNavbarComponent } from './bs-navbar/bs-navbar.component';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { ProductsComponent } from './products/products.component';
+import { BsNavbarComponent } from './core/Components/bs-navbar/bs-navbar.component';
+import { HomeComponent } from './core/Components/home/home.component';
+import { LoginComponent } from './core/Components/login/login.component';
+import { ProductsComponent } from './core/Components/products/products.component';
 import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    BsNavbarComponent,
-    ProductsComponent,
-    LoginComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -53,7 +49,8 @@ import { SharedModule } from './shared/shared.module';
     CustomFormsModule,
     SharedModule,
     AdminModule,
-    ShoppingModule
+    ShoppingModule,
+    CoreModule
 
   ],
   providers: [],
