@@ -1,18 +1,14 @@
-import { OrderDetailsComponent } from './order-details/order-details.component';
-import { ProductFormComponent } from './admin/Components/product-form/product-form.component';
-import { AdminProductsComponent } from './admin/Components/admin-products/admin-products.component';
-import { MyOrdersComponent } from './my-orders/my-orders.component';
-import { OrderSuccessComponent } from './order-success/order-success.component';
-import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
-import { CheckOutComponent } from './check-out/check-out.component';
-import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { ProductsComponent } from './products/products.component';
-import { AdminOrdersComponent } from './admin/Components/admin-orders/admin-orders.component';
 import { AuthGuard } from 'shared/Guards/auth.guard';
-import { AdminGuard } from 'shared/Guards/admin.guard';
+
+import { CheckOutComponent } from './check-out/check-out.component';
+import { LoginComponent } from './login/login.component';
+import { MyOrdersComponent } from './my-orders/my-orders.component';
+import { OrderDetailsComponent } from './order-details/order-details.component';
+import { OrderSuccessComponent } from './order-success/order-success.component';
+import { ProductsComponent } from './products/products.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 const routes: Routes = [
   { path: '', component: ProductsComponent },
@@ -30,31 +26,11 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
 
-  {
-    path: 'admin/products/new',
-    component: ProductFormComponent,
-    canActivate: [AuthGuard, AdminGuard]
-  },
-  {
-    path: 'admin/products/:id',
-    component: ProductFormComponent,
-    canActivate: [AuthGuard, AdminGuard]
-  },
-  {
-    path: 'admin/products',
-    component: AdminProductsComponent,
-    canActivate: [AuthGuard, AdminGuard]
-  },
 
-  {
-    path: 'admin/orders',
-    component: AdminOrdersComponent,
-    canActivate: [AuthGuard, AdminGuard]
-  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

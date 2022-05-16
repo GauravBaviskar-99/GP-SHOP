@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { AdminOrdersComponent } from './Components/admin-orders/admin-orders.component';
 import { AdminProductsComponent } from './Components/admin-products/admin-products.component';
 import { ProductFormComponent } from './Components/product-form/product-form.component';
+import { AdminRoutingModule } from './admin-routing.module';
 
 
 
@@ -19,7 +20,8 @@ import { ProductFormComponent } from './Components/product-form/product-form.com
     CommonModule,
     RouterModule,
     FormsModule,
-    SharedModule
+    SharedModule,
+    AdminRoutingModule
   ]
 })
 export class AdminModule { }
