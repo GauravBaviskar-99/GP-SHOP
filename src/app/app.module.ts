@@ -1,3 +1,4 @@
+import { AdminModule } from './admin/admin.module';
 import { NgModule } from '@angular/core';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
@@ -15,9 +16,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CustomFormsModule } from 'ng2-validation';
 
 import { environment } from '../environments/environment';
-import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
-import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
-import { ProductFormComponent } from './admin/product-form/product-form.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BsNavbarComponent } from './bs-navbar/bs-navbar.component';
@@ -47,11 +45,8 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
     ShoppingCartComponent,
     OrderSuccessComponent,
     MyOrdersComponent,
-    AdminProductsComponent,
-    AdminOrdersComponent,
     LoginComponent,
     CheckOutComponent,
-    ProductFormComponent,
     ProductFilterComponent,
     ShippingWidgetComponent,
     ShippingFormComponent,
@@ -74,6 +69,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
     FormsModule,
     CustomFormsModule,
     SharedModule,
+    AdminModule
 
   ],
   providers: [],
