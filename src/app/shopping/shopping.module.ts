@@ -1,17 +1,15 @@
-import { SharedModule } from './../shared/shared.module';
-import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
-import { ShoppingRoutingModule } from './shopping-routing.module';
+import { SharedModule } from './../shared/shared.module';
 import { CheckOutComponent } from './Components/check-out/check-out.component';
+import { MyOrdersComponent } from './Components/my-orders/my-orders.component';
 import { OrderDetailsComponent } from './Components/order-details/order-details.component';
+import { OrderSuccessComponent } from './Components/order-success/order-success.component';
 import { ShippingFormComponent } from './Components/shipping-form/shipping-form.component';
 import { ShippingWidgetComponent } from './Components/shipping-widget/shipping-widget.component';
-import { MyOrdersComponent } from './Components/my-orders/my-orders.component';
-import { OrderSuccessComponent } from './Components/order-success/order-success.component';
 import { ShoppingCartComponent } from './Components/shopping-cart/shopping-cart.component';
+import { ShoppingRoutingModule } from './shopping-routing.module';
 
 
 @NgModule({
@@ -25,9 +23,7 @@ import { ShoppingCartComponent } from './Components/shopping-cart/shopping-cart.
     MyOrdersComponent,
   ],
   imports: [
-    CommonModule,
     ShoppingRoutingModule,
-    FormsModule,
     RouterModule,
     SharedModule
   ]
